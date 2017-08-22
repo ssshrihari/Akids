@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Akids</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style >
+  body {
+    background-image:url("1.jpg");
+}
+.list-group-item {
+   background-image:url("1.jpg");
+}
+</style>
+
+</head>
+<body>
+
+<div class="jumbotron">
+    <h1><strong>It can be of a fun to play this!Give it a try!</strong></h1>
+</div>
+<ul class="list-group-center-lg" style="width:350px; padding-top:1%; margin:0 auto;">
+<div class="alert alert-success" role="alert">
+  <strong>Click on the glowing button</strong>
+</div>
+  <li class="list-group-item"><button type="button" class="btn btn-secondary btn-lg" id="b1">click</button><button type="button" class="btn btn-secondary  btn-lg" id="b2">click</button><button type="button" class="btn btn-secondary  btn-lg " id="b3">click</button></li>
+  <li class="list-group-item"><button type="button" class="btn btn-secondary  btn-lg" id="b4">click</button><button type="button" class="btn btn-secondary  btn-lg" id="b5">click</button><button type="button" class="btn btn-secondary  btn-lg" id="b6">click</button></li>
+  <li class="list-group-item"><button type="button" class="btn btn-secondary  btn-lg" id="b7">click</button><button type="button" class="btn btn-secondary  btn-lg" id="b8">click</button><button type="button" class="btn btn-secondary  btn-lg" id="b9">click</button></li>
+  <li class="list-group-item"><button type="button" class="btn btn-secondary  btn-lg" id="save">Play Again</button>
+   <button type="button" class="btn btn-secondary  btn-lg" id="next">Next Level</button></li>
+  
+</ul>
+
+</body>
+<script>
+//save and next
+var level=1;
+document.getElementById("save").style.display="none";
+document.getElementById("next").style.display="none";
+//initial colour
+document.getElementById("b1").style.backgroundColor = "orange";
+
+//game
+var b1 = document.getElementById("b1");
+var b2 = document.getElementById("b2");
+var b3 = document.getElementById("b3");
+var b4 = document.getElementById("b4");
+var b5 = document.getElementById("b5");
+var b6 = document.getElementById("b6");
+var b7 = document.getElementById("b7");
+var b8 = document.getElementById("b8");
+var b9 = document.getElementById("b9");
+var save=document.getElementById("save");
+var next=document.getElementById("next");
+//save and playagain
+if(level==1)
+{
+  save.onclick=function(){
+  document.getElementById("save").style.display="none";
+   document.getElementById("next").style.display="none";
+  b1.style.backgroundColor = "yellow";
+}
+next.onclick=function()
+{
+  document.getElementById("save").style.display="none";
+  document.getElementById("next").style.display="none";
+  b1.style.backgroundColor = "red";
+  level=3;
+}
+  b1.onclick = function() {
+     b2.style.background = "black";
+     b1.style.background = "white";   
+}
+
+b2.onclick = function() {
+     b3.style.background = "yellow";
+     b2.style.background = "white";   
+}
+
+b3.onclick = function() {
+     b4.style.background = "violet";
+     b3.style.background = "white";   
+}
+b4.onclick = function() {
+     b5.style.background = "red";
+     b4.style.background = "white";   
+}
+b5.onclick = function() {
+     b6.style.background = "green";
+     b5.style.background = "white";   
+}
+
+b6.onclick = function() {
+     b7.style.background = "purple";
+     b6.style.background = "white";   
+}
+
+b7.onclick = function() {
+     b8.style.background = "brown";
+     b7.style.background = "white";   
+}
+b8.onclick = function() {
+     b9.style.background = "orange";
+     b8.style.background = "white";   
+}
+//final colour
+b9.onclick = function() {
+     b9.style.background = "white";  
+     alert("WOW You have completed the task congratulations!!");
+     document.getElementById("save").style.display="block";
+     document.getElementById("next").style.display="block";
+}
+
+}
+
+
+/*
+if(level==1)
+{
+     b2.disabled = true; 
+     b3.disabled = true; 
+     b4.disabled = true; 
+     b5.disabled = true; 
+     b6.disabled = true; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = true; 
+  save.onclick=function(){
+  document.getElementById("save").style.display="none";
+   document.getElementById("next").style.display="none";
+  b1.style.backgroundColor = "orange";
+  b1.disabled=false;
+}
+next.onclick=function()
+{
+  document.getElementById("save").style.display="none";
+  document.getElementById("next").style.display="none";
+  b1.style.backgroundColor = "yellow";
+  b1.disabled=false;
+  level=2;
+}
+
+b1.onclick = function() {
+     b2.style.background = "green";
+     b1.style.background = "white";  
+     b1.disabled = true; 
+     b2.disabled = false; 
+     b3.disabled = true; 
+     b4.disabled = true; 
+     b5.disabled = true; 
+     b6.disabled = true; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = true; 
+}
+
+b2.onclick = function() {
+     b3.style.background = "yellow";
+     b2.style.background = "white";
+     b1.disabled = true; 
+     b2.disabled = true; 
+     b3.disabled = false; 
+     b4.disabled = true; 
+     b5.disabled = true; 
+     b6.disabled = true; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = true;    
+}
+
+b3.onclick = function() {
+     b4.style.background = "violet";
+     b3.style.background = "white";   
+     b1.disabled = true; 
+     b2.disabled = true; 
+     b3.disabled = true; 
+     b4.disabled = false; 
+     b5.disabled = true; 
+     b6.disabled = true; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = true; 
+}
+b4.onclick = function() {
+     b5.style.background = "red";
+     b4.style.background = "white";   
+     b1.disabled = true; 
+     b2.disabled = true; 
+     b3.disabled = true;
+     b4.disabled = true;  
+     b5.disabled = false; 
+     b6.disabled = true; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = true; 
+}
+b5.onclick = function() {
+     b6.style.background = "green";
+     b5.style.background = "white";
+     b1.disabled = true; 
+     b2.disabled = true; 
+     b3.disabled = true; 
+     b4.disabled = true;
+     b5.disabled = true;  
+     b6.disabled = false; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = true;    
+}
+
+b6.onclick = function() {
+     b7.style.background = "purple";
+     b6.style.background = "white";  
+     b1.disabled = true; 
+     b2.disabled = true; 
+     b3.disabled = true; 
+     b4.disabled = true; 
+     b5.disabled = true;
+     b6.disabled = true;  
+     b7.disabled = false; 
+     b8.disabled = true; 
+     b9.disabled = true;  
+}
+
+b7.onclick = function() {
+     b8.style.background = "brown";
+     b7.style.background = "white";   
+     b1.disabled = true; 
+     b2.disabled = true; 
+     b3.disabled = true; 
+     b4.disabled = true; 
+     b5.disabled = true; 
+     b6.disabled = true;
+     b7.disabled = true;  
+     b8.disabled = false; 
+     b9.disabled = true; 
+}
+b8.onclick = function() {
+     b9.style.background = "orange";
+     b8.style.background = "white";   
+     b1.disabled = true; 
+     b2.disabled = true; 
+     b3.disabled = true; 
+     b4.disabled = true; 
+     b5.disabled = true; 
+     b6.disabled = true; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = false; 
+}
+//final colour
+b9.onclick = function() {
+     b9.style.background = "white";  
+     b2.disabled = true; 
+     b3.disabled = true; 
+     b4.disabled = true; 
+     b5.disabled = true; 
+     b6.disabled = true; 
+     b7.disabled = true; 
+     b8.disabled = true; 
+     b9.disabled = true;
+     b1.disabled = true; 
+     alert("WOW You have completed the task congratulations!!");
+     document.getElementById("save").style.display="block";
+     document.getElementById("next").style.display="block";
+
+}
+}
+
+
+/*if(level==3)
+{
+   save.onclick=function(){
+  document.getElementById("save").style.display="none";
+   document.getElementById("next").style.display="none";
+  b1.style.backgroundColor = "red";
+}
+  b1.onclick = function() {
+     b2.style.background = "green";
+     b1.style.background = "white";   
+}
+
+b2.onclick = function() {
+     b3.style.background = "yellow";
+     b2.style.background = "white";   
+}
+
+b3.onclick = function() {
+     b4.style.background = "violet";
+     b3.style.background = "white";   
+}
+b4.onclick = function() {
+     b5.style.background = "red";
+     b4.style.background = "white";   
+}
+b5.onclick = function() {
+     b6.style.background = "green";
+     b5.style.background = "white";   
+}
+
+b6.onclick = function() {
+     b7.style.background = "purple";
+     b6.style.background = "white";   
+}
+
+b7.onclick = function() {
+     b8.style.background = "brown";
+     b7.style.background = "white";   
+}
+b8.onclick = function() {
+     b9.style.background = "orange";
+     b8.style.background = "white";   
+}
+//final colour
+b9.onclick = function() {
+     b9.style.background = "white";  
+     alert("WOW You have completed the task congratulations!!");
+     document.getElementById("save").style.display="block";
+    // document.getElementById("next").style.display="block";
+}
+
+}*/
+</script>
+</html>
+

@@ -1,0 +1,7 @@
+.btn-group{
+	padding-left: 25%;
+	padding-top: 25%;
+}
+#save {
+    visibility: "hidden";
+}
